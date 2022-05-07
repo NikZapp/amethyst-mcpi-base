@@ -7,9 +7,9 @@ import string
 class Plugin:
     name = 'discord bridge'
     author = 'NikZapp'
-    config = {'bot_motd': 'with code',
-              'bot_token': 'ODQ0MDExODAyMTg2NDgxNjg0.YKMNPg.7PkloYatnG073llQMXcDmJuYwY0',
-              'bot_channel': 907087602237186068}
+    config = {'bot_motd': '',
+              'bot_token': '',
+              'bot_channel': 0}
     client = discord.Client(activity=discord.Game(name=config['bot_motd']))
     event_dict_init = {}
     channel = None
