@@ -11,10 +11,10 @@ class Plugin:
     author = 'NikZapp'
     messages = queue.Queue()
     parsed = 0
-    config = {'log_path': '/home/nikzapp/Desktop/server/log.txt',
+    config = {'log_path': '',
               'time_formatting': '',
               'queue_messages': False,
-              'server_motd': ' '}
+              'server_motd': ''}
     players = {}
     thread = None
     stop_event = Event()
