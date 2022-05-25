@@ -105,7 +105,6 @@ class Plugin:
                 if Plugin.config['queue_messages']:
                     Plugin.messages.put(line[slice_len:-1])
                 new_event_dict = Plugin.decompose_line(line[slice_len:-1], event_dict)
-                print('awooooga', new_event_dict)
                 message_type = new_event_dict['type']
 
                 if message_type == 'join':
@@ -117,14 +116,12 @@ class Plugin:
                 if message_type == 'leave':
                     Plugin.players.pop(new_event_dict['username'])
 
-                Plugin.parsed = len(lines)
+        Plugin.parsed = len(lines)
 
     def update_thread(event_dict):
         while not Plugin.stop_event.is_set():
             time.sleep(1)
-            #print('update', time.time_ns())
             Plugin.update(event_dict)
-        #print('exit')
 
     def send(message):
         connection = Connection("localhost", 4711)
