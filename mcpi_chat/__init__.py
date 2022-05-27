@@ -30,10 +30,7 @@ class Plugin:
         Plugin.thread.start()
 
     def decompose_line(line, event_dict):
-        # Get the length of the timestamp
         decomposition = {}
-        slice_len = len(datetime.now().strftime(Plugin.config['time_formatting']))
-        decomposition['raw_text'] = line[slice_len:]  # Remove the timestamp
         try:
             decomposition['raw_type'] = line[1:5]
             if decomposition['raw_type'] == 'CHAT':
