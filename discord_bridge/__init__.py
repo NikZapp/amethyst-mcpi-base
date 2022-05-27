@@ -46,9 +46,9 @@ class Plugin:
 
     async def on_death(event_dict):
         await Plugin.channel.send(f'''
-    ```fix
-    {event_dict['username']} died
-    ```''')
+```fix
+{event_dict['username']} died
+```''')
 
     @client.event
     async def on_ready():
