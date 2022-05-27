@@ -30,7 +30,7 @@ class Plugin:
         Plugin.thread.start()
 
     def decompose_line(line, event_dict):
-        decomposition = {}
+        decomposition = {'raw_text': line}
         try:
             decomposition['raw_type'] = line[1:5]
             if decomposition['raw_type'] == 'CHAT':
