@@ -60,7 +60,7 @@ class Plugin:
                             # Someone may have died OR someone is faking it
                             # We check if the username is in the list
                             decomposition['username'] = decomposition['raw_text'][
-                                                     8:(decomposition['raw_text'].rindex('disconnected') - 1)]
+                                                     8:(decomposition['raw_text'].rindex('has died') - 1)]
                             if decomposition['username'] in Plugin.players:
                                 decomposition['type'] = 'death'
                                 return decomposition
