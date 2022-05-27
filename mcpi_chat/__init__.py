@@ -70,7 +70,7 @@ class Plugin:
                         pass  # The message is too small, so it's definitely not a death message
                     if decomposition['from_client']:
                         decomposition['type'] = 'chat'
-                        ecomposition['username'] = decomposition['raw_text'][9:decomposition['raw_text'].index('>')]
+                        decomposition['username'] = decomposition['raw_text'][9:decomposition['raw_text'].index('>')]
                         decomposition['message'] = decomposition['raw_text'][len(decomposition['username']) + 11:]
                     else:
                         decomposition['type'] = 'none'
