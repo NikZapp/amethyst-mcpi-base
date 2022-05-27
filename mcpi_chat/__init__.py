@@ -51,7 +51,7 @@ class Plugin:
                                 return decomposition
                             else:
                                 pass  # It's a chat message, continue
-                    except IndexError:
+                    except (IndexError, ValueError):
                         pass  # The message is too small, so it's definitely not a disconnect message
 
                     # Check if it is a death message
@@ -66,7 +66,7 @@ class Plugin:
                                 return decomposition
                             else:
                                 pass  # It's a chat message, continue
-                    except IndexError:
+                    except (IndexError, ValueError):
                         pass  # The message is too small, so it's definitely not a death message
                     if decomposition['from_client']:
                         decomposition['type'] = 'chat'
@@ -85,7 +85,7 @@ class Plugin:
                     return decomposition
             decomposition['type'] = 'none'
             return decomposition
-        except IndexError:
+        except (IndexError, ValueError):
             decomposition['type'] = 'none'
             return decomposition  # Line is too short, probably a system message
 
