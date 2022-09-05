@@ -10,7 +10,9 @@ class Plugin:
     config = {'bot_motd': '',
               'bot_token': '',
               'bot_channel': 0}
-    client = discord.Client(activity=discord.Game(name=config['bot_motd']))
+    intents = discord.Intents.default()
+    intents.messages = True
+    client = discord.Client(activity=discord.Game(name=config['bot_motd']), intents=intents)
     event_dict_init = {}
     channel = None
 
